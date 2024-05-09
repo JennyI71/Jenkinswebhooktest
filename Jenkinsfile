@@ -18,10 +18,8 @@ pipeline {
         stage('Deploy') {
             when {
                 expression {
-                    // Full condition for skipping the Deploy stage
                     def scriptExists = fileExists('./deploy.sh')
-                    def tmpDirExists = fileExists('/tmp')
-                    return !(scriptExists && tmpDirExists)
+                    return !scriptExists
                 }
             }
             steps {
@@ -38,4 +36,5 @@ pipeline {
 def fileExists(filePath) {
     return file(filePath).exists()
 }
+
 
