@@ -34,6 +34,7 @@ pipeline {
 
             steps {
 
+		skip "this stage is skipped"			
                 sh 'echo "Deploying..."'
 
 
