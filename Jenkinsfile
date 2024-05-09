@@ -21,12 +21,12 @@ pipeline {
                     def shouldSkipDeploy = true
                     return shouldSkipDeploy
                 }
-            }
-            steps {
+             steps {
                 sh 'cat ./deploy.sh'
                 sh 'echo "Deploying..."'
                 sh 'mv testfile.txt /tmp'
                 sh 'ls -l /tmp'
+            }
             }
         }
     }
