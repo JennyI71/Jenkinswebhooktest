@@ -18,7 +18,6 @@ pipeline {
         stage('Deploy') {
             when {
                 expression {
-                    // Add your condition here
                     def shouldSkipDeploy = true
                     return shouldSkipDeploy
                 }
