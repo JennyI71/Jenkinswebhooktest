@@ -40,9 +40,7 @@ pipeline {
 
                 sh 'echo "Deploying..."'
 
-                sh 'mv testfile.txt /tmp'
-
-                sh 'ls -l /tmp'
+                
 
             }
 
