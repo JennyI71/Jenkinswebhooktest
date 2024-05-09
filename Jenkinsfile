@@ -16,8 +16,8 @@ pipeline {
             }
         }
 stage('Deploy') {
- 	skip 'skipping'
-
+ skip 'skipping'
+}
 	      steps {
  
                 sh 'cat ./deploy.sh'
@@ -27,12 +27,12 @@ stage('Deploy') {
                 sh 'mv testfile.txt /tmp'
  
                 sh 'ls -l /tmp'
- 
+ 		
             }
  
         }
  
-    }
+    
 }
 
 }
