@@ -16,10 +16,8 @@ pipeline {
             }
         }
         stage('Deploy') {
-            when {
-                expression {
-                    def shouldSkipDeploy = true
-                    return shouldSkipDeploy
+	        when{
+                expression {params.SKIP_DEPLOY == 'true' }
                 }
              steps {
                 sh 'cat ./deploy.sh'
