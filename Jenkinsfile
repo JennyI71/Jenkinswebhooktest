@@ -18,8 +18,9 @@ pipeline {
         stage('Deploy') {
             when {
                 expression {
-                    def scriptExists = fileExists('./deploy.sh')
-                    return !scriptExists
+                    // Add your condition here
+                    def shouldSkipDeploy = true
+                    return shouldSkipDeploy
                 }
             }
             steps {
@@ -32,9 +33,5 @@ pipeline {
     }
 }
 
-// Helper function to check if a file exists
-def fileExists(filePath) {
-    return file(filePath).exists()
-}
 
 
