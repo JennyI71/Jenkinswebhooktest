@@ -16,8 +16,10 @@ pipeline {
             }
         }
 stage('Deploy') {
- skip 'skipping'
-}
+ 
+	                when{
+                expression {params.SKIP_DEPLOY == 'true' }
+                }
 	      steps {
  
                 sh 'cat ./deploy.sh'
@@ -27,14 +29,15 @@ stage('Deploy') {
                 sh 'mv testfile.txt /tmp'
  
                 sh 'ls -l /tmp'
- 		
+ 
             }
  
         }
  
-    
+    }
+	parameters {booleanParam(defaultValue: false, description: 'Skip deploy stage', name: 'SKIP_DEPLOY')
 }
-
+ 
 }
 
 
