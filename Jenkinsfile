@@ -32,8 +32,7 @@ pipeline {
 
         stage('Deploy') {
 	  	steps { 
-
-		skip 'this is skipped'
+			
 		sh 'cat ./deploy.sh'
 	
                 sh 'echo "Deploying..."'
